@@ -1,0 +1,247 @@
+:root{
+    --background-main: #F3F3F3;
+    --background-secondary: #FFFFFF;
+    --main-color: #00B6AD;
+    --secondary-color: #005E59;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background-main);
+    font-family: "Inter";
+    margin: 0;
+    align-items: stretch;
+}
+
+header{
+    background-color: var(--main-color);
+    color: var(--background-secondary);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 4rem;
+}
+
+h1, h2, h3{
+    font-family: sans-serif;
+}
+
+.logo{
+    font-family: 'Alkatra';
+    font-size: 4rem;
+    margin: 0.25rem;
+    line-height: 5rem;
+    color: var(--background-secondary);
+    text-decoration: none;
+}
+
+
+.logInButton, .newArticleButton{
+    background-color: var(--background-secondary);
+    border: 3px solid var(--background-secondary);
+    margin: 1.25rem 0;
+    padding: 0 3rem;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.logInButton:hover, .newArticleButton:hover{
+    background-color: var(--secondary-color);
+    color: var(--background-secondary);
+    border: 3px solid var(--secondary-color);
+}
+
+.articlesHolder{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem;
+    gap: 4rem;
+}
+
+.article{
+    background-color: var(--background-secondary);
+    align-items: start;
+    width: 70%;
+    padding: 1.25rem;
+}
+
+.article > *{
+    white-space: pre-wrap;
+}
+
+.article > .author{
+    font-style: italic;
+    font-weight: 500;
+    font-size: 1rem;
+    margin: 0.5rem 0;
+
+}
+
+.title{
+    color: var(--secondary-color);
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.article > .tags{
+    color: #7D7D7D;
+    font-size: 1rem;
+    margin: 0.5rem 0;
+}
+
+.readMoreDiv{
+    background-color: var(--background-secondary);
+    margin: 1.25rem 0;
+    font-weight: 700;
+    font-size: 1.75rem;
+    color: var(--secondary-color);
+    margin: 0.5rem 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15rem;
+}
+
+.readMoreDiv:hover{
+    background-color: var(--secondary-color);
+    color: var(--background-secondary);
+}
+
+.readMoreAnchor{
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #005E59;
+    text-align: center;
+    padding: 0.5rem 1rem;
+    border: 3px solid var(--secondary-color);
+
+}
+
+.readMoreAnchor:hover{
+    color: var(--background-secondary);
+}
+
+.logInInfo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+#logInFields{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#logInFields > input[type=text], input[type=password]{
+    height: 1.75rem;
+    width: 10rem;
+    margin-right: 3rem;
+    border: 3px solid var(--main-color);
+    font-size: 1.25rem;
+}
+
+#logInFields > input[type=text]:focus, input[type=password]:focus{
+    outline: none;
+    border: none;
+    border: 3px solid var(--secondary-color);
+}
+
+#logInFields > label{
+    margin-right: 0.75rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+
+.postForm{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+
+}
+
+.postForm > label{
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    margin-right: 0.75rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.postForm > input[type=text], textarea{
+    height: 1.75rem;
+    width: 10rem;
+    margin-right: 3rem;
+    border: 3px solid var(--background-main);
+    font-size: 1.25rem;
+    width: 100rem;
+    
+}
+
+.postForm > input[type=text]:focus, textarea:focus{
+    outline: none;
+    border: none;
+    border: 3px solid var(--secondary-color);
+}
+
+.postForm > #intro{
+    white-space:pre;
+    height: 10rem;
+}
+
+.postForm > #mainText{
+    white-space:pre;
+    height: 20rem;
+}
+
+.postForm > #postButton{
+    background-color: var(--background-secondary);
+    font-weight: 700;
+    font-size: 2.25rem;
+    color: var(--secondary-color);
+    margin: 0.5rem 0;
+    cursor: pointer;
+    width: 15rem;
+    margin-top: 2rem;
+    padding: 1rem 0;
+}
+
+.postForm > #postButton:hover{
+    color: var(--background-secondary);
+    background-color: var(--secondary-color);
+}
+
+.titleAndButtons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.buttonsHolder{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.redactorInfo{
+    padding: 0 2rem;
+    font-size: 1.5rem;
+}
+
+#logedInInfo{
+    font-weight: 500;
+    font-size: 1.25rem;
+}
