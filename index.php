@@ -82,6 +82,10 @@ while($article = $result->fetch_assoc()){
     <header>
         <a class="logo" href="index.php">Owl's blog</a>
         <div class="logInInfo" id="logInInfo">
+            <?php if($isAdmin) {?>
+            <a href="redactor.php?action=create" class="newArticleButton" >New post</a>
+            <p id="logedInInfo">You logged in as admin</p>
+            <?php } else {?>
             <form id="logInFields" style="display: none;" action="index.php" method="post">
                 <label for="login">Login:</label>
                 <input type="text" name="login" id="login" required maxlength="100">
@@ -89,10 +93,7 @@ while($article = $result->fetch_assoc()){
                 <input type="password" name="password" id="password" required>
                 <input type="submit" name="logInSubmit" id="logInSubmit" value="Log in" class="logInButton" maxlength="100">
             </form>
-            <?php if($isAdmin) {?>
-            <a href="redactor.php?action=create" class="newArticleButton" >New post</a>
-            <p id="logedInInfo">You logged in as admin</p>
-            <?php } else {?> <button class="logInButton" id="showLogInForm" onclick="logInButtonPressed()">Log in</button> <?php }?>
+            <button class="logInButton" id="showLogInForm" onclick="logInButtonPressed()">Log in</button> <?php }?>
 
         </div>
     </header>
@@ -106,7 +107,9 @@ while($article = $result->fetch_assoc()){
     if(<?=json_encode($isTryingToLogIn) ?>){
         logInButtonPressed();
         if(<?=json_encode($isLogInSuccessful) ?>){
-            window.open("index.php");
+            window.location.href = "index.php";
+            document.getElementById("logInFields").style.display = "none";
+            document.getElementById("showLogInForm").style.display = "block";
         }
         else{
             window.alert("Wrong password or login");
